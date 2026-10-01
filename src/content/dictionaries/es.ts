@@ -5,8 +5,8 @@ import type { PhotoKey, ServiceId } from "@/content/services";
  *
  * Markup: *text* renders as the italic serif accent, \n as a line break.
  *
- * Items marked PLACEHOLDER are realistic examples written for the design.
- * Replace them with verified figures, quotes and results before launch.
+ * Items marked PENDING are drafts shown on the site until the real content
+ * arrives (see src/content/pending.ts).
  */
 export const es = {
   meta: {
@@ -334,11 +334,10 @@ export const es = {
     },
     trust: {
       label: "AF Marketing en cifras",
-      // PLACEHOLDER: replace the first three figures with verified numbers.
       stats: [
-        { value: "150", prefix: "+", label: "eventos producidos y operados" },
-        { value: "10", prefix: "+", label: "años en la industria del entretenimiento" },
-        { value: "60", prefix: "+", label: "medios y creadores en nuestra red" },
+        { value: "250", prefix: "+", label: "eventos producidos y operados" },
+        { value: "15", prefix: "+", label: "años en la industria del entretenimiento" },
+        { value: "90", prefix: "+", label: "medios y creadores en nuestra red" },
         { value: "7", prefix: "", label: "disciplinas bajo un mismo techo" },
       ],
       marqueeLabel: "Tipos de eventos que producimos",
@@ -491,7 +490,7 @@ export const es = {
           challenge: "Recibir a miles de personas en un ruedo con mesas, escenario y corral de jaripeo funcionando a la vez.",
           solution: "Distribución del montaje, staff uniformado, control de accesos y coordinación en sitio con la producción del espectáculo.",
           scope: ["Staff", "Logística", "Operación en sitio"],
-          // PLACEHOLDER metrics: confirm real numbers with the client.
+          // PENDING (draft, see src/content/pending.ts): real client list and metrics.
           metrics: [
             { value: "+2,000", label: "asistentes" },
             { value: "+30", label: "personas de staff" },
@@ -509,7 +508,7 @@ export const es = {
           challenge: "Convocar a prensa, radio y medios digitales para un anuncio, y lograr que la historia se publicara.",
           solution: "Mensajes clave, convocatoria y acreditación de medios, producción de la rueda de prensa y seguimiento a publicaciones.",
           scope: ["Relaciones públicas", "Convocatoria de medios", "Producción"],
-          // PLACEHOLDER metrics: confirm real numbers with the client.
+          // PENDING (draft, see src/content/pending.ts): real client list and metrics.
           metrics: [
             { value: "+15", label: "medios presentes" },
             { value: "+30", label: "notas y menciones" },
@@ -528,7 +527,7 @@ export const es = {
     testimonials: {
       eyebrow: "Testimonios",
       title: "Lo que dicen *cuando se apagan las luces.*",
-      // PLACEHOLDER: replace with real, approved client quotes.
+      // PENDING (draft, see src/content/pending.ts): real, approved client quotes.
       items: [
         {
           quote: "Llegamos con una fecha y una idea. Nos devolvieron un plan, un presupuesto claro y un evento que salió exactamente como lo aprobamos.",
@@ -554,7 +553,7 @@ export const es = {
       eyebrow: "Quién está detrás",
       title: "Las manos *detrás de tu evento.*",
       body: "AF Marketing nació en Tijuana con una idea simple: quien organiza un evento no debería coordinar a diez proveedores para que salga bien. Adrián Fernández reunió producción, operación y comunicación en un solo equipo, y sigue al frente de cada proyecto.",
-      // PLACEHOLDER: confirm the quote with Adrián.
+      // PENDING (draft, see src/content/pending.ts): quote to confirm with Adrián.
       quote: "Un evento se gana en los detalles que nadie ve.",
       quoteBy: "Adrián Fernández, fundador",
       facts: [
@@ -588,7 +587,7 @@ export const es = {
         },
         {
           q: "¿Cómo cotizan?",
-          a: "Después de la llamada de diagnóstico enviamos una propuesta con alcance, calendario y presupuesto desglosado por partida. La propuesta no tiene costo ni compromiso.",
+          a: "Cada evento es distinto, así que no manejamos precios fijos ni paquetes. Después de la llamada de diagnóstico preparamos una propuesta a la medida, según el tipo de evento y su alcance, sin costo ni compromiso.",
         },
         {
           q: "¿Trabajan fuera de Tijuana?",
@@ -611,8 +610,8 @@ export const es = {
     finalCta: {
       eyebrow: "Siguiente paso",
       title: "¿Cuándo es *tu evento?*",
-      body: "Cuéntanos la fecha, el objetivo y el público. Te contactamos en menos de un día hábil para agendar una llamada de diagnóstico sin costo.",
-      reassurance: ["Respuesta en menos de 24 h hábiles", "Propuesta sin costo", "Sin compromiso"],
+      body: "Cuéntanos la fecha, el objetivo y el público. Te respondemos de inmediato para agendar una llamada de diagnóstico sin costo.",
+      reassurance: ["Respuesta inmediata", "Propuesta a la medida", "Sin compromiso"],
     },
   },
 
@@ -662,7 +661,7 @@ export const es = {
     story: {
       eyebrow: "La historia",
       title: "Una idea simple: *un solo responsable.*",
-      // PLACEHOLDER: confirm the founding story with Adrián.
+      // PENDING (draft, see src/content/pending.ts): founding story from Adrián.
       paragraphs: [
         "AF Marketing nació en Tijuana al ver un problema que se repetía en cada evento: quien organiza termina coordinando a diez proveedores que no hablan entre sí. Los retrasos, los sobrecostos y la tensión del día del evento casi siempre nacen ahí.",
         "Adrián Fernández fundó la agencia para resolverlo con una sola dirección: producción, logística, staff, prensa, redes, patrocinios y contenido bajo el mismo techo, con un responsable que conoce cada detalle.",
@@ -709,6 +708,7 @@ export const es = {
       eyebrow: "En medios",
       title: "Conocemos la rueda de prensa *desde la mesa.*",
       body: "Además de convocar a los medios, nos sentamos frente a ellos. Esa experiencia de ambos lados se nota en cada convocatoria que preparamos.",
+      alt: "Adrián Fernández, de AF Marketing, en la mesa de una rueda de prensa, con micrófonos de medios al frente.",
     },
     cta: {
       title: "¿Trabajamos *juntos?*",
@@ -720,16 +720,16 @@ export const es = {
     seo: {
       title: "Contacto: cotiza tu evento",
       description:
-        "Cuéntanos sobre tu evento en Tijuana o Baja California. Respuesta en menos de 24 horas hábiles y propuesta sin costo ni compromiso.",
+        "Cuéntanos sobre tu evento en Tijuana o Baja California. Respuesta inmediata y propuesta a la medida, sin compromiso.",
     },
     eyebrow: "Contacto",
     title: "Cuéntanos *tu evento.*",
     intro: "Mientras más sepamos, más precisa será la propuesta. Si aún no tienes todos los datos, no pasa nada: comparte lo que tengas.",
     stepsTitle: "Qué pasa después",
     steps: [
-      "Revisamos tu mensaje y te contactamos en menos de 24 horas hábiles.",
+      "Revisamos tu mensaje y te respondemos de inmediato.",
       "Agendamos una llamada de diagnóstico de 30 minutos, sin costo.",
-      "Recibes una propuesta con alcance, calendario y presupuesto desglosado.",
+      "Recibes una propuesta a la medida de tu evento, con alcance y calendario.",
     ],
     channelsTitle: "¿Prefieres escribirnos directo?",
     channels: { email: "Correo", whatsapp: "WhatsApp", base: "Base", social: "Redes" },
@@ -775,16 +775,6 @@ export const es = {
       guests: "Asistentes estimados",
       guestsPlaceholder: "Selecciona un rango",
       guestsOptions: ["Menos de 100", "100 a 500", "500 a 2,000", "2,000 a 10,000", "Más de 10,000"],
-      budget: "Presupuesto aproximado",
-      budgetHint: "Nos ayuda a proponer el alcance adecuado.",
-      budgetPlaceholder: "Selecciona un rango",
-      budgetOptions: [
-        "Aún no lo sé",
-        "Menos de $100,000 MXN",
-        "$100,000 a $300,000 MXN",
-        "$300,000 a $1,000,000 MXN",
-        "Más de $1,000,000 MXN",
-      ],
       message: "Cuéntanos más",
       messagePlaceholder: "Objetivo del evento, público, ideas, dudas…",
       consentBefore: "He leído y acepto el",
@@ -795,8 +785,8 @@ export const es = {
       sending: "Enviando…",
       fallbackNote: "Al enviar se abrirá WhatsApp o tu app de correo con el brief listo para mandar.",
       successTitle: "¡Recibido!",
-      successBody: "Gracias, {name}. Te contactamos en menos de 24 horas hábiles para agendar la llamada de diagnóstico.",
-      successHandoff: "Termina de enviar el mensaje en la ventana que se abrió. Te contactamos en menos de 24 horas hábiles.",
+      successBody: "Gracias, {name}. Te respondemos de inmediato para agendar la llamada de diagnóstico.",
+      successHandoff: "Termina de enviar el mensaje en la ventana que se abrió. Te respondemos de inmediato.",
       again: "Enviar otra solicitud",
       error: "No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos a {email}.",
       errors: {
@@ -834,7 +824,7 @@ export const es = {
         heading: "Datos que recabamos",
         body: [
           "Datos de identificación y contacto: nombre, correo electrónico, teléfono y empresa o proyecto.",
-          "Información sobre tu evento que decidas compartir: tipo de evento, fecha, sede, número de asistentes, presupuesto aproximado y mensaje. No solicitamos datos personales sensibles.",
+          "Información sobre tu evento que decidas compartir: tipo de evento, fecha, sede, número de asistentes y mensaje. No solicitamos datos personales sensibles.",
         ],
       },
       {

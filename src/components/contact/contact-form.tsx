@@ -73,7 +73,6 @@ export function ContactForm({ labels, services, email, whatsapp, endpoint, priva
       [labels.date, String(data.get("date") ?? "")],
       [labels.city, String(data.get("city") ?? "")],
       [labels.guests, String(data.get("guests") ?? "")],
-      [labels.budget, String(data.get("budget") ?? "")],
       [labels.message, String(data.get("message") ?? "")],
     ];
     return [labels.briefIntro, "", ...rows.filter(([, v]) => v.trim()).map(([k, v]) => `• ${k}: ${v.trim()}`)].join("\n");
@@ -287,23 +286,6 @@ export function ContactForm({ labels, services, email, whatsapp, endpoint, priva
             ))}
           </div>
         </fieldset>
-
-        <div className="field sm:col-span-2">
-          <label htmlFor={id("budget")} className="field-label">
-            {labels.budget} <span className="font-normal text-fg-subtle">· {labels.optional}</span>
-          </label>
-          <p id={id("budget-hint")} className="field-hint -mt-1">
-            {labels.budgetHint}
-          </p>
-          <select id={id("budget")} name="budget" defaultValue="" aria-describedby={id("budget-hint")} className="input">
-            <option value="" disabled>
-              {labels.budgetPlaceholder}
-            </option>
-            {labels.budgetOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </div>
 
         <div className="field sm:col-span-2">
           <label htmlFor={id("message")} className="field-label">

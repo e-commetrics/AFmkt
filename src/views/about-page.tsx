@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import type { CSSProperties } from "react";
 import { PageTransition } from "@/components/layout/page-transition";
 import { CoverageMap } from "@/components/sections/coverage-map";
@@ -55,7 +56,8 @@ export function AboutPage({ locale }: { locale: Locale }) {
         }
       />
 
-      {/* Founding story */}
+      {/* Founding story (hidden until the real story is confirmed) */}
+      {!pending.foundingStory && (
       <section aria-labelledby="story-title" className="theme-paper section-y">
         <div className="container-af grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -79,6 +81,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Principles */}
       <section aria-labelledby="principles-title" className="theme-dark section-y">
@@ -177,7 +180,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
             <div className="duotone relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)]">
               <Photo
                 name="press"
-                alt={t.home.work.cases[1].alt}
+                alt={a.press.alt}
                 sizes="(min-width: 1024px) 38vw, 100vw"
                 className="absolute inset-0"
                 position="50% 40%"

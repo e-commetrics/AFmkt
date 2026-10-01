@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import Link from "@/components/ui/intent-link";
 import { Logo } from "@/components/brand/monogram";
 import { ArrowUpRight, Mail, MapPin, socialIcons, WhatsApp } from "@/components/ui/icons";
@@ -53,7 +54,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <ul className="space-y-2.5">
               {[
                 [href("about", locale), t.footer.agencyLinks.about],
-                [homeAnchor(t.anchors.work, locale), t.footer.agencyLinks.work],
+                ...(pending.caseStudies ? [] : [[homeAnchor(t.anchors.work, locale), t.footer.agencyLinks.work]]),
                 [homeAnchor(t.anchors.process, locale), t.footer.agencyLinks.process],
                 [homeAnchor(t.anchors.faq, locale), t.footer.agencyLinks.faq],
                 [href("contact", locale), t.footer.agencyLinks.contact],

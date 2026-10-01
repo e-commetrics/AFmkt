@@ -11,7 +11,8 @@
     "images": "bun scripts/images.ts",
     "icons": "bun scripts/icons.ts",
     "og": "bun scripts/og.tsx",
-    "assets": "bun run images && bun run icons && bun run og"
+    "assets": "bun run images && bun run icons && bun run og",
+    "release": "bun scripts/release.ts"
   },
   "dependencies": {
     "next": "16.3.8",

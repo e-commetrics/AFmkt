@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { fontVariables } from "@/app/fonts";
@@ -10,6 +11,7 @@ import { homeAnchor, href, languageTag, serviceHref, type Locale } from "@/lib/i
 import { organizationGraph, SITE_URL } from "@/lib/seo";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader, type HeaderProps } from "./site-header";
+import { WhatsAppFloat } from "./whatsapp-float";
 
 export function rootMetadata(locale: Locale): Metadata {
   const t = getDictionary(locale);
@@ -46,7 +48,7 @@ export function LocaleShell({ locale, children }: { locale: Locale; children: Re
     locale,
     labels: {
       services: t.nav.services,
-      work: t.nav.work,
+      work: pending.caseStudies ? t.footer.agencyLinks.process : t.nav.work,
       about: t.nav.about,
       contact: t.nav.contact,
       mainLabel: t.nav.mainLabel,
@@ -63,7 +65,7 @@ export function LocaleShell({ locale, children }: { locale: Locale; children: Re
     links: {
       home: href("home", locale),
       services: href("services", locale),
-      work: homeAnchor(t.anchors.work, locale),
+      work: homeAnchor(pending.caseStudies ? t.anchors.process : t.anchors.work, locale),
       about: href("about", locale),
       contact: href("contact", locale),
     },
@@ -106,6 +108,9 @@ export function LocaleShell({ locale, children }: { locale: Locale; children: Re
           {children}
         </main>
         <SiteFooter locale={locale} />
+        {header.contact.whatsappHref && (
+          <WhatsAppFloat href={header.contact.whatsappHref} label={`${t.common.whatsappCta} ${t.common.newTab}`} />
+        )}
         <RevealObserver />
         <JsonLd data={organizationGraph(locale)} />
       </body>

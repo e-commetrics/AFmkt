@@ -12,7 +12,7 @@ export const site = {
   // reads as more established than Gmail: switch it here once available.
   email: "afmarketing123@gmail.com",
   // WhatsApp Business number, digits only, with country code. Example: 526641234567
-  whatsapp: "",
+  whatsapp: "526641516867",
   // Full profile URLs, e.g. https://www.instagram.com/usuario/
   social: {
     instagram: "",

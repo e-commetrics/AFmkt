@@ -5,12 +5,8 @@ import { serviceIds, services, type ServiceId } from "@/content/services";
 import { site } from "@/content/site";
 import { languageTag, locales, ogLocale, routes, serviceHref, type Locale } from "./i18n";
 
-const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-
 /** Absolute origin used for canonical URLs, hreflang, OG and the sitemap. */
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || (vercelUrl ? `https://${vercelUrl}` : "http://localhost:3000")
-).replace(/\/+$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://afmarketing.mx").replace(/\/+$/, "");
 
 export const absolute = (path: string) => `${SITE_URL}${path}`;
 

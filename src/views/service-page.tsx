@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import Link from "@/components/ui/intent-link";
 import type { CSSProperties } from "react";
 import { ServiceMotif } from "@/components/brand/service-motif";
@@ -147,7 +148,7 @@ export function ServicePage({ id, locale }: { id: ServiceId; locale: Locale }) {
       </section>
 
       {/* Proof from a real project */}
-      {meta.photo && proof && (
+      {!pending.caseStudies && meta.photo && proof && (
         <section aria-labelledby="proof-title" className="theme-dark section-y border-t border-line">
           <div className="container-af grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <figure className="group lg:col-span-6" data-reveal>

@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import { AboutTeaser } from "@/components/home/about-teaser";
 import { CaseStudies } from "@/components/home/case-studies";
 import { Difference } from "@/components/home/difference";
@@ -43,8 +44,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       <Difference locale={locale} />
       <StaffBand locale={locale} />
       <Process locale={locale} />
-      <CaseStudies locale={locale} />
-      <Testimonials locale={locale} />
+      {!pending.caseStudies && <CaseStudies locale={locale} />}
+      {!pending.testimonials && <Testimonials locale={locale} />}
       <AboutTeaser locale={locale} />
       <FaqSection locale={locale} />
       <FinalCta locale={locale} />

@@ -1,3 +1,4 @@
+import { pending } from "@/content/pending";
 import type { CSSProperties } from "react";
 import { Accent } from "@/components/ui/accent";
 import { ButtonLink } from "@/components/ui/button";
@@ -39,10 +40,12 @@ export function AboutTeaser({ locale }: { locale: Locale }) {
             {a.body}
           </p>
 
+          {!pending.foundingStory && (
           <blockquote className="mt-10 border-l-2 border-volt pl-6" data-reveal style={{ "--d": 100 } as CSSProperties}>
             <p className="font-accent text-[clamp(1.6rem,1.2rem+1.4vw,2.4rem)] leading-tight text-white">“{a.quote}”</p>
             <footer className="mono-label mt-4 text-fg-subtle">{a.quoteBy}</footer>
           </blockquote>
+          )}
 
           <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-md)] border border-line bg-line" data-reveal>
             {a.facts.map((f) => (

@@ -41,5 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# deploy archives
+# deploy archives (except the committed release)
 *.zip
+!release/afmarketing-site.zip

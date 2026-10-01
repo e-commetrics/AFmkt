@@ -4,7 +4,7 @@ import type { Dictionary } from "./es";
  * English copy, for cross-border brands, promoters and touring artists.
  * Same structure as es.ts (enforced by the Dictionary type).
  *
- * Items marked PLACEHOLDER must be replaced with verified content before launch.
+ * Items marked PENDING are drafts shown on the site (see src/content/pending.ts).
  */
 export const en: Dictionary = {
   meta: {
@@ -332,11 +332,10 @@ export const en: Dictionary = {
     },
     trust: {
       label: "AF Marketing by the numbers",
-      // PLACEHOLDER: replace the first three figures with verified numbers.
       stats: [
-        { value: "150", prefix: "+", label: "events produced and run" },
-        { value: "10", prefix: "+", label: "years in live entertainment" },
-        { value: "60", prefix: "+", label: "media outlets and creators in our network" },
+        { value: "250", prefix: "+", label: "events produced and run" },
+        { value: "15", prefix: "+", label: "years in live entertainment" },
+        { value: "90", prefix: "+", label: "media outlets and creators in our network" },
         { value: "7", prefix: "", label: "disciplines under one roof" },
       ],
       marqueeLabel: "Types of events we produce",
@@ -489,7 +488,7 @@ export const en: Dictionary = {
           challenge: "Welcoming thousands of people into an arena running tables, a stage and a bull-riding ring at the same time.",
           solution: "Floor layout, uniformed staff, access control and on-site coordination with the show's production team.",
           scope: ["Staffing", "Logistics", "On-site operations"],
-          // PLACEHOLDER metrics: confirm real numbers with the client.
+          // PENDING (draft, see src/content/pending.ts): real client list and metrics.
           metrics: [
             { value: "2,000+", label: "guests" },
             { value: "30+", label: "staff on the ground" },
@@ -507,7 +506,7 @@ export const en: Dictionary = {
           challenge: "Bringing print, radio and digital media to an announcement — and getting the story published.",
           solution: "Key messages, media invitations and accreditation, press conference production and publication follow-up.",
           scope: ["Public relations", "Media outreach", "Production"],
-          // PLACEHOLDER metrics: confirm real numbers with the client.
+          // PENDING (draft, see src/content/pending.ts): real client list and metrics.
           metrics: [
             { value: "15+", label: "media outlets present" },
             { value: "30+", label: "stories and mentions" },
@@ -526,7 +525,7 @@ export const en: Dictionary = {
     testimonials: {
       eyebrow: "Testimonials",
       title: "What clients say *after the lights go down.*",
-      // PLACEHOLDER: replace with real, approved client quotes.
+      // PENDING (draft, see src/content/pending.ts): real, approved client quotes.
       items: [
         {
           quote: "We came in with a date and an idea. They came back with a plan, a clear budget and an event that ran exactly as we approved it.",
@@ -552,7 +551,7 @@ export const en: Dictionary = {
       eyebrow: "Who's behind it",
       title: "The hands *behind your event.*",
       body: "AF Marketing was born in Tijuana from a simple idea: whoever organizes an event shouldn't have to coordinate ten vendors to get it right. Adrián Fernández brought production, operations and communications together in one team — and still leads every project.",
-      // PLACEHOLDER: confirm the quote with Adrián.
+      // PENDING (draft, see src/content/pending.ts): quote to confirm with Adrián.
       quote: "Events are won in the details nobody sees.",
       quoteBy: "Adrián Fernández, founder",
       facts: [
@@ -586,7 +585,7 @@ export const en: Dictionary = {
         },
         {
           q: "How do you quote?",
-          a: "After the discovery call we send a proposal with scope, timeline and a budget itemized line by line. The proposal is free and carries no commitment.",
+          a: "Every event is different, so we don't work with fixed prices or packages. After the discovery call we prepare a custom proposal based on the type of event and its scope — free and with no commitment.",
         },
         {
           q: "Do you work outside Tijuana?",
@@ -609,8 +608,8 @@ export const en: Dictionary = {
     finalCta: {
       eyebrow: "Next step",
       title: "When's *your event?*",
-      body: "Tell us the date, the goal and the audience. We'll get back to you within one business day to book a free discovery call.",
-      reassurance: ["Reply within 1 business day", "Free proposal", "No commitment"],
+      body: "Tell us the date, the goal and the audience. We reply right away to book a free discovery call.",
+      reassurance: ["Immediate reply", "Custom proposal", "No commitment"],
     },
   },
 
@@ -660,7 +659,7 @@ export const en: Dictionary = {
     story: {
       eyebrow: "Our story",
       title: "A simple idea: *one accountable team.*",
-      // PLACEHOLDER: confirm the founding story with Adrián.
+      // PENDING (draft, see src/content/pending.ts): founding story from Adrián.
       paragraphs: [
         "AF Marketing was born in Tijuana from a problem we saw at every event: the organizer ends up coordinating ten vendors who never talk to each other. Delays, budget overruns and event-day stress almost always start there.",
         "Adrián Fernández founded the agency to solve it with a single direction: production, logistics, staffing, press, social, sponsorships and content under one roof, with one person who knows every detail.",
@@ -707,6 +706,7 @@ export const en: Dictionary = {
       eyebrow: "In the media",
       title: "We know the press conference *from the head table.*",
       body: "We don't just invite the media — we sit in front of them. That experience from both sides shows in every press event we prepare.",
+      alt: "Adrián Fernández of AF Marketing at a press conference table, with media microphones in front of him.",
     },
     cta: {
       title: "Shall we work *together?*",
@@ -718,16 +718,16 @@ export const en: Dictionary = {
     seo: {
       title: "Contact: Get a Quote for Your Event",
       description:
-        "Tell us about your event in Tijuana or Baja California. Reply within one business day and a free, no-commitment proposal.",
+        "Tell us about your event in Tijuana or Baja California. Immediate reply and a custom, no-commitment proposal.",
     },
     eyebrow: "Contact",
     title: "Tell us about *your event.*",
     intro: "The more we know, the sharper the proposal. Don't have every detail yet? No problem — share what you have.",
     stepsTitle: "What happens next",
     steps: [
-      "We review your message and get back to you within one business day.",
+      "We review your message and reply right away.",
       "We book a free 30-minute discovery call.",
-      "You receive a proposal with scope, timeline and an itemized budget.",
+      "You receive a proposal tailored to your event, with scope and timeline.",
     ],
     channelsTitle: "Prefer to reach us directly?",
     channels: { email: "Email", whatsapp: "WhatsApp", base: "Base", social: "Social" },
@@ -767,16 +767,6 @@ export const en: Dictionary = {
       guests: "Expected attendance",
       guestsPlaceholder: "Select a range",
       guestsOptions: ["Under 100", "100 to 500", "500 to 2,000", "2,000 to 10,000", "Over 10,000"],
-      budget: "Approximate budget",
-      budgetHint: "It helps us propose the right scope.",
-      budgetPlaceholder: "Select a range",
-      budgetOptions: [
-        "Not sure yet",
-        "Under $5,000 USD",
-        "$5,000 to $15,000 USD",
-        "$15,000 to $50,000 USD",
-        "Over $50,000 USD",
-      ],
       message: "Tell us more",
       messagePlaceholder: "Event goal, audience, ideas, questions…",
       consentBefore: "I have read and accept the",
@@ -787,8 +777,8 @@ export const en: Dictionary = {
       sending: "Sending…",
       fallbackNote: "Sending opens WhatsApp or your email app with your brief ready to go.",
       successTitle: "Received!",
-      successBody: "Thanks, {name}. We'll be in touch within one business day to book your discovery call.",
-      successHandoff: "Finish sending the message in the window that just opened. We'll be in touch within one business day.",
+      successBody: "Thanks, {name}. We'll reply right away to book your discovery call.",
+      successHandoff: "Finish sending the message in the window that just opened. We'll reply right away.",
       again: "Send another request",
       error: "We couldn't send your request. Please try again or email us at {email}.",
       errors: {
@@ -826,7 +816,7 @@ export const en: Dictionary = {
         heading: "Data we collect",
         body: [
           "Identification and contact data: name, email address, phone number and company or project.",
-          "Information about your event that you choose to share: event type, date, venue, expected attendance, approximate budget and message. We do not request sensitive personal data.",
+          "Information about your event that you choose to share: event type, date, venue, expected attendance and message. We do not request sensitive personal data.",
         ],
       },
       {
