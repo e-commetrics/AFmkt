@@ -767,6 +767,16 @@ export const en: Dictionary = {
       guests: "Expected attendance",
       guestsPlaceholder: "Select a range",
       guestsOptions: ["Under 100", "100 to 500", "500 to 2,000", "2,000 to 10,000", "Over 10,000"],
+      budget: "Approximate budget",
+      budgetHint: "It helps us propose the right scope.",
+      budgetPlaceholder: "Select a range",
+      budgetOptions: [
+        "Not sure yet",
+        "Under $5,000 USD",
+        "$5,000 to $15,000 USD",
+        "$15,000 to $50,000 USD",
+        "Over $50,000 USD",
+      ],
       message: "Tell us more",
       messagePlaceholder: "Event goal, audience, ideas, questions…",
       consentBefore: "I have read and accept the",
@@ -816,7 +826,7 @@ export const en: Dictionary = {
         heading: "Data we collect",
         body: [
           "Identification and contact data: name, email address, phone number and company or project.",
-          "Information about your event that you choose to share: event type, date, venue, expected attendance and message. We do not request sensitive personal data.",
+          "Information about your event that you choose to share: event type, date, venue, expected attendance, approximate budget and message. We do not request sensitive personal data.",
         ],
       },
       {

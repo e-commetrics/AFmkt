@@ -15,7 +15,7 @@ export const site = {
   whatsapp: "526641516867",
   // Full profile URLs, e.g. https://www.instagram.com/usuario/
   social: {
-    instagram: "",
+    instagram: "https://www.instagram.com/adrianfernandez333/",
     facebook: "",
     linkedin: "",
   },

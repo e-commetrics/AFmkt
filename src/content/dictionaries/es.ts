@@ -775,6 +775,16 @@ export const es = {
       guests: "Asistentes estimados",
       guestsPlaceholder: "Selecciona un rango",
       guestsOptions: ["Menos de 100", "100 a 500", "500 a 2,000", "2,000 a 10,000", "Más de 10,000"],
+      budget: "Presupuesto aproximado",
+      budgetHint: "Nos ayuda a proponer el alcance adecuado.",
+      budgetPlaceholder: "Selecciona un rango",
+      budgetOptions: [
+        "Aún no lo sé",
+        "Menos de $100,000 MXN",
+        "$100,000 a $300,000 MXN",
+        "$300,000 a $1,000,000 MXN",
+        "Más de $1,000,000 MXN",
+      ],
       message: "Cuéntanos más",
       messagePlaceholder: "Objetivo del evento, público, ideas, dudas…",
       consentBefore: "He leído y acepto el",
@@ -824,7 +834,7 @@ export const es = {
         heading: "Datos que recabamos",
         body: [
           "Datos de identificación y contacto: nombre, correo electrónico, teléfono y empresa o proyecto.",
-          "Información sobre tu evento que decidas compartir: tipo de evento, fecha, sede, número de asistentes y mensaje. No solicitamos datos personales sensibles.",
+          "Información sobre tu evento que decidas compartir: tipo de evento, fecha, sede, número de asistentes, presupuesto aproximado y mensaje. No solicitamos datos personales sensibles.",
         ],
       },
       {
