@@ -8,7 +8,7 @@ export function StaffBand({ locale }: { locale: Locale }) {
   const b = getDictionary(locale).home.staffBand;
 
   return (
-    <section aria-labelledby="staff-title" className="theme-dark relative pt-24 lg:pt-32">
+    <section aria-labelledby="staff-title" className="theme-dark relative pt-20 lg:pt-24">
       <div className="container-af grid gap-8 pb-12 lg:grid-cols-12 lg:items-end lg:pb-16">
         <div className="lg:col-span-7">
           <p className="eyebrow mb-6" data-reveal>

@@ -8,7 +8,7 @@ import { FaqList } from "@/components/ui/faq-list";
 import { Mail, MapPin, socialIcons, WhatsApp } from "@/components/ui/icons";
 import { getDictionary } from "@/content/dictionaries";
 import { serviceIds } from "@/content/services";
-import { formatPhone, site, socialLinks, whatsappHref } from "@/content/site";
+import { formatPhone, site, socialLinks, whatsappHref, emailFor } from "@/content/site";
 import { href, type Locale } from "@/lib/i18n";
 import { absolute, breadcrumbGraph, pageMetadata, pagePaths } from "@/lib/seo";
 
@@ -63,7 +63,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
             <ContactForm
               labels={c.form}
               services={serviceIds.map((id) => ({ id, name: t.services[id].navName }))}
-              email={site.email}
+              email={emailFor(locale)}
               whatsapp={site.whatsapp}
               endpoint={process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ""}
               privacyHref={href("privacy", locale)}
@@ -88,13 +88,13 @@ export function ContactPage({ locale }: { locale: Locale }) {
                 <h2 className="mono-label text-fg-subtle">{c.channelsTitle}</h2>
                 <ul className="mt-5 space-y-4">
                   <li>
-                    <a href={`mailto:${site.email}`} className="group flex items-center gap-4">
+                    <a href={`mailto:${emailFor(locale)}`} className="group flex items-center gap-4">
                       <span className="grid size-11 shrink-0 place-items-center rounded-full border border-line-strong text-volt transition-colors group-hover:border-volt">
                         <Mail className="size-5" />
                       </span>
                       <span>
                         <span className="mono-label block text-fg-subtle">{c.channels.email}</span>
-                        <span className="break-all text-white">{site.email}</span>
+                        <span className="break-all text-white">{emailFor(locale)}</span>
                       </span>
                     </a>
                   </li>

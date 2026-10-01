@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { RevealObserver } from "@/components/ui/reveal-observer";
 import { getDictionary } from "@/content/dictionaries";
 import { pillarIds, servicesInPillar } from "@/content/services";
-import { site, whatsappHref } from "@/content/site";
+import { site, whatsappHref, emailFor } from "@/content/site";
 import { homeAnchor, href, languageTag, serviceHref, type Locale } from "@/lib/i18n";
 import { organizationGraph, SITE_URL } from "@/lib/seo";
 import { SiteFooter } from "./site-footer";
@@ -82,7 +82,7 @@ export function LocaleShell({ locale, children }: { locale: Locale; children: Re
       })),
     })),
     contact: {
-      email: site.email,
+      email: emailFor(locale),
       whatsappHref: whatsappHref(t.common.whatsappMessage),
       whatsappLabel: t.common.whatsappCta,
     },

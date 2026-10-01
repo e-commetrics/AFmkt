@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { plain } from "@/components/ui/accent";
 import { getDictionary } from "@/content/dictionaries";
 import { serviceIds, services, type ServiceId } from "@/content/services";
-import { site } from "@/content/site";
+import { site, emailFor } from "@/content/site";
 import { languageTag, locales, ogLocale, routes, serviceHref, type Locale } from "./i18n";
 
 /** Absolute origin used for canonical URLs, hreflang, OG and the sitemap. */
@@ -94,7 +94,7 @@ export function organizationGraph(locale: Locale) {
         image: absolute(`/og/${locale}/home.jpg`),
         description: dict.meta.description,
         slogan: locale === "es" ? "Tu evento, en buenas manos." : "Your event, in expert hands.",
-        email: `mailto:${site.email}`,
+        email: `mailto:${emailFor(locale)}`,
         ...(site.whatsapp ? { telephone: `+${site.whatsapp}` } : {}),
         address: {
           "@type": "PostalAddress",

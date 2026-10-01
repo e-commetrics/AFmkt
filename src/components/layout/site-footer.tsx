@@ -4,7 +4,7 @@ import { Logo } from "@/components/brand/monogram";
 import { ArrowUpRight, Mail, MapPin, socialIcons, WhatsApp } from "@/components/ui/icons";
 import { getDictionary } from "@/content/dictionaries";
 import { serviceIds } from "@/content/services";
-import { formatPhone, site, socialLinks, whatsappHref } from "@/content/site";
+import { formatPhone, site, socialLinks, whatsappHref, emailFor } from "@/content/site";
 import { homeAnchor, href, languageTag, serviceHref, type Locale } from "@/lib/i18n";
 import { LocaleLink } from "./locale-link";
 import { LocalTime } from "./local-time";
@@ -72,9 +72,9 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <h2 className="mono-label mb-5 text-fg-subtle">{t.footer.contactTitle}</h2>
             <ul className="space-y-3 text-fg-muted">
               <li>
-                <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 break-all hover:text-white">
+                <a href={`mailto:${emailFor(locale)}`} className="inline-flex items-center gap-3 break-all hover:text-white">
                   <Mail className="size-4 shrink-0 text-volt" />
-                  {site.email}
+                  {emailFor(locale)}
                 </a>
               </li>
               {wa && (
@@ -115,7 +115,13 @@ export function SiteFooter({ locale }: { locale: Locale }) {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line py-8 text-sm text-fg-subtle md:flex-row md:items-center md:justify-between">
           <p>
-            © {year} AF Marketing. {t.footer.rights}
+            © {year} AF Marketing. {t.footer.rights}{" "}
+            <span className="whitespace-nowrap">
+              Powered by{" "}
+              <a href="https://ecommetrica.com" target="_blank" rel="noopener" className="link-draw text-fg-muted hover:text-white">
+                ecommetrica.com
+              </a>
+            </span>
           </p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <li>

@@ -3,7 +3,7 @@ import { PageTransition } from "@/components/layout/page-transition";
 import { PageHero } from "@/components/sections/page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary } from "@/content/dictionaries";
-import { site } from "@/content/site";
+import { emailFor } from "@/content/site";
 import { href, type Locale } from "@/lib/i18n";
 import { breadcrumbGraph, pageMetadata, pagePaths } from "@/lib/seo";
 
@@ -18,14 +18,14 @@ export function privacyMetadata(locale: Locale) {
   });
 }
 
-const withEmail = (text: string) => {
+const withEmail = (text: string, email: string) => {
   const [before, after] = text.split("{email}");
   return after === undefined ? (
     text
   ) : (
     <>
       {before}
-      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={`mailto:${email}`}>{email}</a>
       {after}
     </>
   );
@@ -69,13 +69,13 @@ export function PrivacyPage({ locale }: { locale: Locale }) {
                   {s.heading}
                 </h2>
                 {s.body.map((para) => (
-                  <p key={para}>{withEmail(para)}</p>
+                  <p key={para}>{withEmail(para, emailFor(locale))}</p>
                 ))}
               </div>
             ))}
             <p className="!mt-14 border-t border-line pt-8">
               <Link href={href("contact", locale)}>{t.nav.contact}</Link> ·{" "}
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`mailto:${emailFor(locale)}`}>{emailFor(locale)}</a>
             </p>
           </div>
         </div>
