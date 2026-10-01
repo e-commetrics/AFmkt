@@ -1,0 +1,42 @@
+{
+  "name": "af-marketing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "bunx serve@14 out",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "images": "bun scripts/images.ts",
+    "icons": "bun scripts/icons.ts",
+    "og": "bun scripts/og.tsx",
+    "assets": "bun run images && bun run icons && bun run og",
+    "release": "bun scripts/release.ts"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "bun@1.3.14",
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
+}

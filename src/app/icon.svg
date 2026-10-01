@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<rect width="64" height="64" rx="14" fill="#070807"/>
+<g transform="translate(10.88 13.74) scale(0.1588)" fill="#BDF23F">
+<polygon points="153,0 266,0 266,46 199,46 199,92 249,92 249,138 199,138 199,230 153,230"/><polygon points="78,0 124,0 199,230 153,230" stroke="#070807" stroke-width="13.85" paint-order="stroke" stroke-linejoin="miter"/><polygon points="0,230 46,230 124,0 78,0" stroke="#070807" stroke-width="13.85" paint-order="stroke" stroke-linejoin="miter"/>
+</g></svg>
