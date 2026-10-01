@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import type { CSSProperties, ReactNode } from "react";
 import { Monogram } from "@/components/brand/monogram";
 import { Accent } from "@/components/ui/accent";
@@ -45,12 +45,14 @@ interface PageHeroProps {
   aside?: ReactNode;
   /** Content under the intro (CTAs, meta). */
   children?: ReactNode;
+  /** "md" for long titles (service names) that must not overflow. */
+  size?: "lg" | "md";
 }
 
 const delay = (ms: number) => ({ "--d": ms }) as CSSProperties;
 
 /** Inner-page opening: breadcrumbs, eyebrow, H1 with the brand accent. */
-export function PageHero({ crumbs, crumbLabel, eyebrow, title, intro, aside, children }: PageHeroProps) {
+export function PageHero({ crumbs, crumbLabel, eyebrow, title, intro, aside, children, size = "lg" }: PageHeroProps) {
   return (
     <section aria-labelledby="page-title" className="theme-dark relative isolate overflow-hidden border-b border-line">
       <Monogram className="pointer-events-none absolute -right-24 -top-10 -z-10 h-[34rem] w-auto text-ink-900 [--mono-cut:var(--color-ink-950)] lg:h-[46rem]" />
@@ -60,7 +62,7 @@ export function PageHero({ crumbs, crumbLabel, eyebrow, title, intro, aside, chi
           <p className="eyebrow fade-in mt-10" style={delay(100)}>
             {eyebrow}
           </p>
-          <h1 id="page-title" className="mt-6 font-display text-display-lg text-white">
+          <h1 id="page-title" className={`mt-6 font-display text-white ${size === "lg" ? "text-display-lg" : "text-display-md"}`}>
             <span className="rise-line">
               <span style={delay(120)}>
                 <Accent text={title} />
@@ -68,7 +70,7 @@ export function PageHero({ crumbs, crumbLabel, eyebrow, title, intro, aside, chi
             </span>
           </h1>
           {intro && (
-            <div className="fade-in lead mt-8 max-w-2xl text-ink-200" style={delay(350)}>
+            <div className="lead mt-8 max-w-2xl text-ink-200">
               {intro}
             </div>
           )}

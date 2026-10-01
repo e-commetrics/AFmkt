@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import type { CSSProperties } from "react";
 import { ServiceMotif } from "@/components/brand/service-motif";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -52,6 +52,7 @@ export function ServicePage({ id, locale }: { id: ServiceId; locale: Locale }) {
         crumbLabel={t.common.breadcrumb}
         eyebrow={`${meta.number} / ${total} · ${t.pillars[meta.pillar].name}`}
         title={s.name}
+        size="md"
         intro={s.what}
         aside={
           <div className="relative mx-auto aspect-square max-w-md rounded-[var(--radius-xl)] border border-line bg-ink-900/80 p-10 backdrop-blur lg:max-w-none">

@@ -14,7 +14,7 @@ const project = (lat: number, lon: number) =>
   [+((lon - BOUNDS.west) * SX).toFixed(1), +((BOUNDS.north - lat) * SY).toFixed(1)] as const;
 
 const CITIES = [
-  { name: "Tijuana", lat: 32.5149, lon: -117.0382, base: true, anchor: "start" as const, dx: 16, dy: 5 },
+  { name: "Tijuana", lat: 32.5149, lon: -117.0382, base: true, anchor: "start" as const, dx: 18, dy: 7 },
   { name: "San Diego", lat: 32.7157, lon: -117.1611, anchor: "start" as const, dx: 12, dy: -8 },
   { name: "Rosarito", lat: 32.3661, lon: -117.0618, anchor: "start" as const, dx: 12, dy: 5 },
   { name: "Tecate", lat: 32.565, lon: -116.627, anchor: "start" as const, dx: 12, dy: 18 },
@@ -90,7 +90,7 @@ export function CoverageMap({ label, baseLabel, borderLabel }: { label: string; 
               {c.name}
             </text>
             {c.base && (
-              <text x={c.dx} y={c.dy + 20} className="coverage-small coverage-base-tag">
+              <text x={c.dx} y={c.dy + 24} className="coverage-small coverage-base-tag">
                 {baseLabel.toUpperCase()}
               </text>
             )}

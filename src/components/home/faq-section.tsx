@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import { Accent } from "@/components/ui/accent";
 import { FaqList } from "@/components/ui/faq-list";
 import { ArrowRight } from "@/components/ui/icons";

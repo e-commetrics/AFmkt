@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import type { CSSProperties } from "react";
 import { Accent } from "@/components/ui/accent";
 import { ButtonLink } from "@/components/ui/button";
@@ -47,7 +47,7 @@ export function CaseStudies({ locale }: { locale: Locale }) {
                       {c.category}
                     </span>
                   </div>
-                  <figcaption className="mono-label mt-4 flex justify-between gap-4 text-fg-subtle">
+                  <figcaption className="mono-label mt-4 flex flex-col gap-1 text-fg-subtle sm:flex-row sm:justify-between sm:gap-4">
                     <span>{c.client}</span>
                     <span>{c.location}</span>
                   </figcaption>

@@ -88,16 +88,16 @@ export function VendorDiagram({ labels }: DiagramProps) {
   const caption = after ? labels.after.caption : labels.before.caption;
 
   return (
-    <div ref={root} className="theme-dark card overflow-hidden p-4 sm:p-6" data-mode={mode}>
+    <div ref={root} className="theme-dark card overflow-hidden p-3 sm:p-6" data-mode={mode}>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="group" aria-label={labels.toggleLabel} className="inline-flex rounded-full border border-line p-1">
+        <div role="group" aria-label={labels.toggleLabel} className="flex w-full rounded-full border border-line p-1 sm:inline-flex sm:w-auto">
           {(["before", "after"] as const).map((m) => (
             <button
               key={m}
               type="button"
               aria-pressed={mode === m}
               onClick={() => choose(m)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
+              className={`flex-1 rounded-full px-4 py-2 text-sm font-medium leading-tight transition-colors duration-300 sm:flex-none ${
                 mode === m ? "bg-volt text-ink-950" : "text-ink-300 hover:text-white"
               }`}
             >
@@ -105,7 +105,7 @@ export function VendorDiagram({ labels }: DiagramProps) {
             </button>
           ))}
         </div>
-        <span className="mono-label text-fg-subtle">{after ? "1 × AF" : `${n} × ?`}</span>
+        <span className="mono-label hidden text-fg-subtle sm:inline">{after ? "1 × AF" : `${n} × ?`}</span>
       </div>
 
       <svg viewBox={`0 0 ${W} ${H}`} className="vendor-diagram mt-4 w-full" role="img" aria-label={`${labels.label}. ${caption}`}>
@@ -167,15 +167,15 @@ export function VendorDiagram({ labels }: DiagramProps) {
         {/* Vendors */}
         {labels.vendors.map((name, i) => {
           const p = after ? ringPoint(i, n) : SCATTER[i];
-          const w = Math.max(64, name.length * 8.2 + 30);
+          const w = Math.max(72, name.length * 9.6 + 34);
           return (
             <g
               key={name}
               className="vd-node"
               style={{ transform: `translate(${p.x}px, ${p.y}px)`, transitionDelay: `${after ? 120 + i * 40 : i * 30}ms` }}
             >
-              <rect x={-w / 2} y={-17} width={w} height={34} rx={17} className={after ? "vd-pill vd-pill-on" : "vd-pill"} />
-              <text y={5} textAnchor="middle" className="vd-label">
+              <rect x={-w / 2} y={-19} width={w} height={38} rx={19} className={after ? "vd-pill vd-pill-on" : "vd-pill"} />
+              <text y={5.5} textAnchor="middle" className="vd-label">
                 {name}
               </text>
             </g>

@@ -12,7 +12,7 @@ export const archivo = Archivo({
 export const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
-  style: ["normal", "italic"],
+  style: "italic",
   variable: "--font-instrument",
   display: "swap",
 });
@@ -20,7 +20,7 @@ export const instrumentSerif = Instrument_Serif({
 /** Small technical labels. Not preloaded: never the LCP element. */
 export const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "500",
   variable: "--font-plex-mono",
   display: "swap",
   preload: false,

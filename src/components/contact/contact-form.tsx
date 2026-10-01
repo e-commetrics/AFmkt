@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Check, Mail, WhatsApp } from "@/components/ui/icons";
 import type { Dictionary } from "@/content/dictionaries";

@@ -44,20 +44,20 @@ export function Hero({ locale }: { locale: Locale }) {
         <div className="mt-auto pt-16">
           <h1 id="hero-title" className="font-display text-display-xl text-white">
             <span className="rise-line">
-              <span style={delay(80)}>{h.titleLine1}</span>
+              <span style={delay(0)}>{h.titleLine1}</span>
             </span>
             <span className="rise-line">
-              <span style={delay(200)} className="display-accent">
+              <span style={delay(110)} className="display-accent">
                 {h.titleLine2}
               </span>
             </span>
           </h1>
 
           <div className="mt-10 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-end">
-            <p className="fade-in lead max-w-xl text-ink-200 lg:col-span-6" style={delay(450)}>
+            <p className="lead max-w-xl text-ink-200 lg:col-span-6">
               {h.lead}
             </p>
-            <div className="fade-in flex flex-col gap-3 sm:flex-row lg:col-span-6 lg:justify-end" style={delay(600)}>
+            <div className="fade-in flex flex-col gap-3 sm:flex-row lg:col-span-6 lg:justify-end" style={delay(350)}>
               <ButtonLink href={href("contact", locale)} size="lg">
                 {t.common.primaryCta}
               </ButtonLink>
@@ -69,8 +69,8 @@ export function Hero({ locale }: { locale: Locale }) {
         </div>
 
         <div
-          className="fade-in mt-12 grid items-center gap-6 border-t border-white/10 pt-6 md:grid-cols-[1fr_auto] lg:grid-cols-3"
-          style={delay(800)}
+          className="fade-in mt-12 grid items-center gap-6 border-t border-white/10 pt-6 md:grid-cols-[1fr_auto] xl:grid-cols-3"
+          style={delay(500)}
         >
           <div className="flex items-center gap-4">
             <span className="relative size-12 shrink-0 overflow-hidden rounded-full ring-1 ring-white/15">
@@ -81,7 +81,7 @@ export function Hero({ locale }: { locale: Locale }) {
               <span className="text-ink-300">{h.founderRole}</span>
             </p>
           </div>
-          <p className="mono-label hidden text-center text-ink-400 lg:block">{h.caption}</p>
+          <p className="mono-label hidden text-center text-ink-400 xl:block">{h.caption}</p>
           <p className="mono-label hidden items-center justify-end gap-3 text-ink-300 md:flex" aria-hidden="true">
             {h.scroll}
             <span className="scroll-cue relative block h-10 w-px overflow-hidden bg-white/15" />

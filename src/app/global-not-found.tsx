@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import { Logo } from "@/components/brand/monogram";
 import { getDictionary } from "@/content/dictionaries";
 import { routes } from "@/lib/i18n";
@@ -55,12 +55,15 @@ export default function GlobalNotFound() {
               </Link>
             </div>
           </div>
-          <p
+          <svg
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-[0.18em] right-0 -z-10 select-none font-display text-[42vw] leading-none text-ink-900"
+            viewBox="0 0 1000 330"
+            className="pointer-events-none absolute -bottom-[2%] right-0 -z-10 w-[92vw] select-none"
           >
-            404
-          </p>
+            <text x="1000" y="320" textAnchor="end" className="fill-ink-900 font-display" style={{ fontSize: 400 }}>
+              404
+            </text>
+          </svg>
         </main>
       </body>
     </html>

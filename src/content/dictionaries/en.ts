@@ -809,6 +809,7 @@ export const en: Dictionary = {
         "AF Marketing privacy notice: what personal data we collect, how we use it and how to exercise your rights.",
     },
     eyebrow: "Legal",
+    tocLabel: "Contents",
     title: "Privacy notice",
     updated: "Last updated: October 1, 2026",
     intro:

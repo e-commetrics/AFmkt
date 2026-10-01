@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand/monogram";
@@ -251,13 +251,22 @@ export function SiteHeader({ locale, labels, links, pillars, contact }: HeaderPr
         </div>
       </div>
 
+      {/* Dims the page behind the services panel; a click closes it. */}
+      <div
+        aria-hidden="true"
+        onClick={() => setMegaOpen(false)}
+        className={`fixed inset-x-0 bottom-0 top-[var(--header-h)] -z-10 hidden bg-ink-950/60 transition-opacity duration-300 lg:block ${
+          megaOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
       {/* Desktop services panel */}
       <div
         id="services-panel"
         hidden={!megaOpen}
         onMouseEnter={openMega}
         onMouseLeave={closeMegaSoon}
-        className="theme-dark absolute inset-x-0 top-full hidden border-b border-line bg-ink-950/95 backdrop-blur-xl lg:block"
+        className="theme-dark absolute inset-x-0 top-full hidden border-b border-line bg-ink-950 shadow-[0_40px_80px_-20px_rgb(0_0_0/0.7)] lg:block"
       >
         <div className="container-af grid grid-cols-12 gap-8 py-10">
           {pillars.map((pillar) => (
@@ -330,7 +339,10 @@ export function SiteHeader({ locale, labels, links, pillars, contact }: HeaderPr
           </nav>
 
           <ul className="mt-8 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {pillars.flatMap((p) => p.items).map((s) => (
+            {pillars
+              .flatMap((p) => p.items)
+              .sort((a, b) => a.number.localeCompare(b.number))
+              .map((s) => (
               <li key={s.id}>
                 <Link
                   href={s.href}

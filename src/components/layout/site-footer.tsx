@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import { Logo } from "@/components/brand/monogram";
 import { ArrowUpRight, Mail, MapPin, socialIcons, WhatsApp } from "@/components/ui/icons";
 import { getDictionary } from "@/content/dictionaries";

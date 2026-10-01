@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import type { CSSProperties } from "react";
 import { ServiceMotif } from "@/components/brand/service-motif";
 import { SectionHeader } from "@/components/ui/section";

@@ -35,9 +35,10 @@ export function ContactPage({ locale }: { locale: Locale }) {
   return (
     <PageTransition>
       <section aria-labelledby="page-title" className="theme-dark relative border-b border-line">
-        <div className="container-af grid gap-12 pb-20 pt-[calc(var(--header-h)+2.5rem)] lg:grid-cols-12 lg:gap-16 lg:pb-28 lg:pt-[calc(var(--header-h)+4.5rem)]">
-          <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)]">
+        {/* Phones: intro → form → details. Large screens: form on the right. */}
+        <div className="container-af grid gap-12 pb-20 pt-[calc(var(--header-h)+2.5rem)] lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:pb-28 lg:pt-[calc(var(--header-h)+4.5rem)]">
+          <div className="lg:col-span-5 lg:row-start-1">
+            <div>
               <Breadcrumbs
                 label={t.common.breadcrumb}
                 items={[{ name: t.common.home, href: href("home", locale) }, { name: t.nav.contact }]}
@@ -45,18 +46,33 @@ export function ContactPage({ locale }: { locale: Locale }) {
               <p className="eyebrow fade-in mt-10" style={delay(100)}>
                 {c.eyebrow}
               </p>
-              <h1 id="page-title" className="mt-6 font-display text-display-lg text-white">
+              <h1 id="page-title" className="mt-6 font-display text-display-md text-white">
                 <span className="rise-line">
                   <span style={delay(120)}>
                     <Accent text={c.title} />
                   </span>
                 </span>
               </h1>
-              <p className="fade-in lead mt-8 text-ink-200" style={delay(300)}>
+              <p className="lead mt-8 text-ink-200">
                 {c.intro}
               </p>
+            </div>
+          </div>
 
-              <div className="fade-in mt-12" style={delay(420)}>
+          <div className="fade-in lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1" style={delay(250)}>
+            <ContactForm
+              labels={c.form}
+              services={serviceIds.map((id) => ({ id, name: t.services[id].navName }))}
+              email={site.email}
+              whatsapp={site.whatsapp}
+              endpoint={process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ""}
+              privacyHref={href("privacy", locale)}
+              locale={locale}
+            />
+          </div>
+          <div className="lg:col-span-5 lg:row-start-2">
+            <div className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)]">
+              <div className="fade-in" style={delay(420)}>
                 <h2 className="mono-label text-fg-subtle">{c.stepsTitle}</h2>
                 <ol className="mt-5 space-y-4">
                   {c.steps.map((step, i) => (
@@ -129,17 +145,6 @@ export function ContactPage({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="fade-in lg:col-span-7" style={delay(250)}>
-            <ContactForm
-              labels={c.form}
-              services={serviceIds.map((id) => ({ id, name: t.services[id].navName }))}
-              email={site.email}
-              whatsapp={site.whatsapp}
-              endpoint={process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ""}
-              privacyHref={href("privacy", locale)}
-              locale={locale}
-            />
-          </div>
         </div>
       </section>
 

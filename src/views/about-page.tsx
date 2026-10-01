@@ -151,7 +151,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-7" data-reveal>
+          <div className="hidden sm:block lg:col-span-7" data-reveal>
             <div className="card p-4 sm:p-8">
               <CoverageMap label={a.coverage.mapLabel} baseLabel={a.coverage.base} borderLabel={a.coverage.border} />
             </div>

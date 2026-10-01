@@ -817,6 +817,7 @@ export const es = {
         "Aviso de privacidad de AF Marketing: qué datos personales recabamos, para qué los usamos y cómo ejercer tus derechos ARCO.",
     },
     eyebrow: "Legal",
+    tocLabel: "Índice",
     title: "Aviso de privacidad",
     updated: "Última actualización: 1 de octubre de 2026",
     intro:

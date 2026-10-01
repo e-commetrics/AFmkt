@@ -24,10 +24,10 @@ export function Testimonials({ locale }: { locale: Locale }) {
         <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-12 lg:gap-8">
           <figure className="card flex flex-col justify-between p-8 sm:p-12 lg:col-span-7" data-reveal>
             <div>
-              <span aria-hidden="true" className="block font-serif text-[7rem] leading-[0.6] text-forest/30">
+              <span aria-hidden="true" className="block h-12 font-serif text-[6.5rem] leading-[0.85] text-forest/30 sm:h-16 sm:text-[8rem]">
                 “
               </span>
-              <blockquote className="mt-4">
+              <blockquote className="mt-2">
                 <p className="font-accent text-[clamp(1.75rem,1.2rem+2vw,2.9rem)] leading-[1.12] text-fg">
                   {featured.quote}
                 </p>

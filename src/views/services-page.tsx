@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/intent-link";
 import type { CSSProperties } from "react";
 import { ServiceMotif } from "@/components/brand/service-motif";
 import { Process } from "@/components/home/process";
@@ -63,7 +63,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
                   <p className="mono-label text-volt" data-reveal>
                     {String(pi + 1).padStart(2, "0")} / 03 · {items.length} {sp.servicesCount}
                   </p>
-                  <h2 id={`pillar-${pillar}`} className="mt-4 font-display text-display-md text-white" data-reveal>
+                  <h2 id={`pillar-${pillar}`} className="mt-4 font-display text-[clamp(2.1rem,1.2rem+2.6vw,3.5rem)] leading-none text-white" data-reveal>
                     {t.pillars[pillar].name}
                   </h2>
                   <p className="mt-4 font-accent text-[1.6rem] leading-tight text-ink-200" data-reveal>
